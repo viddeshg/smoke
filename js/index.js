@@ -31,7 +31,7 @@ function init() {
  
     textGeo = new THREE.PlaneGeometry(300,300);
     THREE.ImageUtils.crossOrigin = ''; //Need this to pull in crossdomain images from AWS
-    textTexture = THREE.ImageUtils.loadTexture('/img/smoke.png');
+    textTexture = THREE.ImageUtils.loadTexture('./img/smoke.png');
     textMaterial = new THREE.MeshLambertMaterial({color: 0x00ffff, opacity: 1, map: textTexture, transparent: true, blending: THREE.AdditiveBlending})
     text = new THREE.Mesh(textGeo,textMaterial);
     text.position.z = 800;
@@ -41,7 +41,7 @@ function init() {
     light.position.set(-1,0,1);
     scene.add(light);
   
-    smokeTexture = THREE.ImageUtils.loadTexture('/img/smoke-ele.png');
+    smokeTexture = THREE.ImageUtils.loadTexture('./img/smoke-ele.png');
     smokeMaterial = new THREE.MeshLambertMaterial({color: 0x00dddd, map: smokeTexture, transparent: true});
     smokeGeo = new THREE.PlaneGeometry(300,300);
     smokeParticles = [];
